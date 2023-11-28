@@ -14,7 +14,7 @@ db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
                       
-@StreamBot.on_message(filters.command('start') & filters.private)
+@StreamBot.on_message(filters.command('kkstart') & filters.private)
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
